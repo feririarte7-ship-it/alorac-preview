@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alorac — Gestoría Inmobiliaria Ibiza</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+        }
+
+        /* HEADER & NAV */
+        header {
+            background: white;
+            border-bottom: 1px solid #ecf0f1;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e3a8a;
+            letter-spacing: -0.5px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #1e3a8a;
+        }
+        .nav-links .btn {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .nav-links .btn:hover {
+            background: #1a2f6a;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            padding: 100px 40px;
+            text-align: center;
+        }
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        .hero .cta {
+            display: inline-flex;
+            gap: 15px;
+        }
+        .btn-primary {
+            background: white;
+            color: #1e3a8a;
+            padding: 14px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 14px 30px;
+            border: 2px solid white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn-secondary:hover {
+            background: white;
+            color: #1e3a8a;
+        }
+
+        /* SECCIONES */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #1e3a8a;
+        }
+        .section-subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 50px;
+            max-width: 600px;
+        }
+
+        /* SOBRE CAROLA */
+        .sobre {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .sobre-texto h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #1e3a8a;
+        }
+        .sobre-texto p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .sobre-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .highlight-box {
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 4px;
+            border-left: 3px solid #1e3a8a;
+        }
+        .highlight-box .numero {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+        .highlight-box .label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 8px;
+        }
+
+        /* SERVICIOS */
+        .servicios {
+            background: #f9fafb;
+        }
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        .servicio-card {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .servicio-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .servicio-icon {
+            width: 60px;
+            height: 60px;
+            background: #1e3a8a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            margin: 0 auto 20px;
+        }
+        .servicio-card h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #1e3a8a;
+        }
+        .servicio-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #666;
+        }
+
+        /* PROPIEDADES DESTACADAS */
+        .propiedades-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .propiedad-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .propiedad-card:hover {
+            transform: translateY(-4px);
+        }
+        .propiedad-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+        }
+        .propiedad-content {
+            padding: 25px;
+        }
+        .propiedad-content h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #1e3a8a;
+        }
+        .propiedad-content p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .propiedad-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+
+        /* CLIENTES */
+        .clientes-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            align-items: center;
+        }
+        .cliente-logo {
+            background: #f0f4f8;
+            padding: 30px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 600;
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 60px 40px;
+        }
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .cta-section p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        /* CONTACTO */
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        .contacto-metodo {
+            text-align: center;
+        }
+        .contacto-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        .contacto-metodo h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #1e3a8a;
+        }
+        .contacto-metodo p {
+            font-size: 14px;
+            color: #666;
+        }
+        .contacto-metodo a {
+            color: #1e3a8a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            font-size: 13px;
+        }
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* BADGE */
+        .badge {
+            display: inline-block;
+            background: #fff3cd;
+            color: #856404;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { gap: 20px; flex-wrap: wrap; }
+            .hero h1 { font-size: 32px; }
+            .sobre { grid-template-columns: 1fr; }
+            .servicios-grid { grid-template-columns: 1fr; }
+            .propiedades-grid { grid-template-columns: 1fr; }
+            .clientes-grid { grid-template-columns: repeat(2, 1fr); }
+            .contacto-grid { grid-template-columns: 1fr; }
+            nav { padding: 15px 20px; }
+            .section { padding: 50px 20px; }
+            .hero { padding: 60px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVEGACIÓN -->
+    <header>
+        <nav>
+            <div class="logo">Alorac</div>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre Carola</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#propiedades">Propiedades</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#contacto" class="btn">Contactar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Especialista en Locales Comerciales Ibiza</h1>
+            <p>15 años de experiencia colocando las mejores oportunidades inmobiliarias para marcas nacionales e internacionales</p>
+            <div class="cta">
+                <button class="btn-primary" onclick="document.getElementById('contacto').scrollIntoView()">Ver Propiedades</button>
+                <button class="btn-secondary" onclick="document.getElementById('contacto').scrollIntoView()">Contactar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE CAROLA -->
+    <section id="sobre" class="section sobre">
+        <div class="sobre-texto">
+            <div class="badge">Fundada en 2011</div>
+            <h2>Carola Nicolés<br/>Gestora Inmobiliaria Ibiza</h2>
+            <p>Con más de 15 años de experiencia, Carola ha posicionado a Alorac como la gestoría inmobiliaria de referencia en Ibiza. Su profundo conocimiento del mercado local, combinado con un network sólido de propietarios, inversores y marcas, hace que cada operación sea exitosa.</p>
+            <p>Trabaja con algunos de los nombres más grandes del retail y gastronomía: desde Benetton y MAC hasta el FC Barcelona. Su expertise abarca desde la búsqueda inicial hasta la gestión integral de la operación.</p>
+
+            <div class="sobre-highlights">
+                <div class="highlight-box">
+                    <div class="numero">100+</div>
+                    <div class="label">Operaciones Completadas</div>
+                </div>
+                <div class="highlight-box">
+                    <div class="numero">50+</div>
+                    <div class="label">Clientes Activos</div>
+                </div>
+                <div class="highlight-box">
+                    <div class="numero">15+</div>
+                    <div class="label">Años Experiencia</div>
+                </div>
+                <div class="highlight-box">
+                    <div class="numero">€50M+</div>
+                    <div class="label">Volumen Transaccional</div>
+                </div>
+            </div>
+        </div>
+        <div style="background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); border-radius: 8px; height: 400px; display: flex; align-items: center; justify-content: center; color: white; font-size: 48px;">
+            👩‍💼
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="section servicios">
+        <h2>Nuestros Servicios</h2>
+        <p class="section-subtitle">Soluciones integrales para tu negocio inmobiliario en Ibiza</p>
+        <div class="servicios-grid">
+            <div class="servicio-card">
+                <div class="servicio-icon">📊</div>
+                <h3>Estudios de Mercado</h3>
+                <p>Análisis exhaustivo de rentabilidad, rentas por metro cuadrado y datos comparativos. Te damos la información que necesitas para decidir con confianza.</p>
+            </div>
+            <div class="servicio-card">
+                <div class="servicio-icon">💰</div>
+                <h3>Valoración de Inmuebles</h3>
+                <p>Estimación precisa de propiedades y cálculo de rentas de mercado. Basada en datos reales del mercado local ibicenco.</p>
+            </div>
+            <div class="servicio-card">
+                <div class="servicio-icon">🤝</div>
+                <h3>Gestión Integral</h3>
+                <p>Tramitación completa de licencias, seguimiento de obra y coordinación de proveedores. Nosotros nos encargamos de todo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROPIEDADES DESTACADAS -->
+    <section id="propiedades" class="section">
+        <h2>Propiedades Disponibles</h2>
+        <p class="section-subtitle">Selección de oportunidades comerciales en Ibiza</p>
+        <div class="propiedades-grid">
+            <div class="propiedad-card">
+                <div class="propiedad-image">🏪</div>
+                <div class="propiedad-content">
+                    <h3>Local Gastro Centro</h3>
+                    <p>Zona peatonal premium, 120m², ideal para restaurante o bar</p>
+                    <div class="propiedad-meta">
+                        <span>€2.500/mes</span>
+                        <span>120 m²</span>
+                    </div>
+                </div>
+            </div>
+            <div class="propiedad-card">
+                <div class="propiedad-image">🛍️</div>
+                <div class="propiedad-content">
+                    <h3>Retail Paseo Marítimo</h3>
+                    <p>Frente al puerto, alto tráfico, perfecto para retail</p>
+                    <div class="propiedad-meta">
+                        <span>€3.200/mes</span>
+                        <span>85 m²</span>
+                    </div>
+                </div>
+            </div>
+            <div class="propiedad-card">
+                <div class="propiedad-image">🏢</div>
+                <div class="propiedad-content">
+                    <h3>Oficina Centro Empresarial</h3>
+                    <p>Suite completa con servicios, piso 2, bien comunicada</p>
+                    <div class="propiedad-meta">
+                        <span>€1.800/mes</span>
+                        <span>200 m²</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENTES -->
+    <section class="section">
+        <h2>Clientes que Confían en Alorac</h2>
+        <p class="section-subtitle">Marcas nacionales e internacionales que hemos asesorado</p>
+        <div class="clientes-grid">
+            <div class="cliente-logo">Benetton</div>
+            <div class="cliente-logo">MAC Cosmetics</div>
+            <div class="cliente-logo">Bershka</div>
+            <div class="cliente-logo">FC Barcelona</div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>¿Buscas la Ubicación Perfecta?</h2>
+        <p>Contáctanos. Carola te asesorará personalmente sobre las mejores oportunidades para tu negocio.</p>
+        <button class="btn-primary" onclick="document.getElementById('contacto').scrollIntoView()" style="background: white; color: #1e3a8a;">Solicitar Asesoramiento</button>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section">
+        <h2>Contacta con Alorac</h2>
+        <p class="section-subtitle">Varias formas de conectar con Carola</p>
+        <div class="contacto-grid">
+            <div class="contacto-metodo">
+                <div class="contacto-icon">📱</div>
+                <h3>WhatsApp</h3>
+                <p>Para consultas rápidas y directas</p>
+                <a href="#">Abrir WhatsApp</a>
+            </div>
+            <div class="contacto-metodo">
+                <div class="contacto-icon">📧</div>
+                <h3>Email</h3>
+                <p>info@alorac.com</p>
+                <a href="mailto:info@alorac.com">Enviar Email</a>
+            </div>
+            <div class="contacto-metodo">
+                <div class="contacto-icon">☎️</div>
+                <h3>Teléfono</h3>
+                <p>Llamada directa a Carola</p>
+                <a href="#">Ver Teléfono</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>Alorac — Servicios Inmobiliarios</strong></p>
+        <p>Especialistas en colocación de locales comerciales en Ibiza</p>
+        <p style="margin-top: 20px; opacity: 0.7;">© 2026 Alorac. Todos los derechos reservados.</p>
+        <p style="font-size: 11px; margin-top: 15px; opacity: 0.5;">Preview diseñado por Chains of Brains | <a href="#" style="color: inherit;">Ver propuestas comerciales</a></p>
+    </footer>
+</body>
+</html>
