@@ -119,11 +119,16 @@
   @media (max-width:520px){.navcta{display:none}}
 
   /* HERO */
-  .hero{position:relative;isolation:isolate;padding-block:96px 72px;border-bottom:1px solid var(--line-2);background:var(--paper)}
-  /* Foto de portada: Dalt Vila (trip1 Travel, Pexels). Velo arena de izquierda a derecha para leer el titular */
-  .hero::before{content:"";position:absolute;inset:0;z-index:-2;background:url("assets/hero-dalt-vila.jpg") 70% 40%/cover no-repeat}
-  .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,color-mix(in srgb,var(--paper) 95%,transparent) 0%,color-mix(in srgb,var(--paper) 88%,transparent) 40%,color-mix(in srgb,var(--paper) 35%,transparent) 100%)}
-  @media (max-width:820px){.hero::after{background:color-mix(in srgb,var(--paper) 86%,transparent)}}
+  /* Hero a pantalla completa: Dalt Vila (trip1 Travel, Pexels) con viraje sepia horneado en el JPG y velo oscuro.
+     Sobre la foto el texto va siempre claro, en tema claro y oscuro: tokens propios del hero */
+  .hero{--ink:#F4ECDC;--ink-soft:rgba(244,236,220,.88);--ink-faint:rgba(244,236,220,.72);--brass:#E0C48C;--line:rgba(244,236,220,.30);--line-2:rgba(244,236,220,.16);--paper:#1A130C;
+    position:relative;isolation:isolate;min-height:calc(100svh - 64px);display:flex;align-items:center;padding-block:72px;background:#1A130C;color:var(--ink)}
+  .hero > .wrap{width:100%}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-2;background:url("assets/hero-dalt-vila.jpg") 65% 45%/cover no-repeat}
+  .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(20,13,7,.74) 0%,rgba(20,13,7,.55) 50%,rgba(20,13,7,.32) 100%),linear-gradient(0deg,rgba(20,13,7,.45) 0%,rgba(20,13,7,0) 45%)}
+  @media (max-width:820px){.hero::after{background:rgba(20,13,7,.62)}}
+  .hero .stat{background:rgba(26,19,12,.42);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+  .hero .stat-row{background:var(--line);border-color:var(--line)}
   .hero-grid{display:block;max-width:880px}
   .hero h1{font-size:clamp(44px,7.4vw,88px);line-height:.98;letter-spacing:-.015em}
   .hero .lede{margin-top:28px;font-size:19px;max-width:58ch}
@@ -169,6 +174,8 @@
   /* TRACK RECORD */
   .track-note{margin-top:20px;font-size:12.5px;color:var(--ink-faint)}
   /* Carruseles: la pista contiene la secuencia dos veces; se desplaza -50% para un loop sin corte */
+  .proof{padding-block:56px 64px}
+  .proof .sec-head{margin-bottom:28px}
   .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
   .marquee-track{list-style:none;margin:0;padding:0 12px 0 0;display:flex;gap:12px;width:max-content;animation:marquee var(--dur,200s) linear infinite}
   .marquee:hover .marquee-track,.marquee:focus-within .marquee-track{animation-play-state:paused}
@@ -309,47 +316,11 @@
   </div>
   </div>
 
-  <section id="quienes">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow" data-i18n="about.eyebrow">Quiénes somos</p>
-        <h2 data-i18n="about.title">Conocemos cada local de Ibiza: quién es el propietario, quién el inquilino y qué potencial comercial tiene.</h2>
-        <p class="lede" data-i18n="about.body">Alorac es una consultoría de real estate fundada en 2011 por Carola Nicolàs, abogada y referente del sector retail en las Islas Baleares. No trabajamos con listados públicos: operamos por conocimiento directo del mercado y discreción con cada operación.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="servicios">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow" data-i18n="serv.eyebrow">Servicios</p>
-        <h2 data-i18n="serv.title">Un acompañamiento integral, del análisis a la firma.</h2>
-      </div>
-      <div class="pillars">
-        <div class="pillar">
-          <div class="pn">01</div>
-          <h3 data-i18n="serv.1t">Estudios de mercado</h3>
-          <p data-i18n="serv.1b">Análisis de rentabilidad, rentas medias por m² y demanda real por ubicación para decidir con datos.</p>
-        </div>
-        <div class="pillar">
-          <div class="pn">02</div>
-          <h3 data-i18n="serv.2t">Valoración de inmuebles</h3>
-          <p data-i18n="serv.2b">Estimación de valor y renta de mercado para negociar desde una posición informada.</p>
-        </div>
-        <div class="pillar">
-          <div class="pn">03</div>
-          <h3 data-i18n="serv.3t">Gestión integral</h3>
-          <p data-i18n="serv.3b">Tramitación de licencias, seguimiento de obra y red de proveedores, constructoras e industriales locales.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="trayectoria">
+  <section id="trayectoria" class="proof">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow" data-i18n="track.eyebrow">Trayectoria</p>
-        <h2 data-i18n="track.title">Marcas que han confiado en Alorac para su implantación en Ibiza.</h2>
+        <h2 data-i18n="track.title">Marcas que han confiado en Alorac</h2>
       </div>
     </div>
     <div class="marquee" aria-label="Marcas">
@@ -534,6 +505,42 @@
     </div>
   </section>
 
+  <section id="quienes">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow" data-i18n="about.eyebrow">Quiénes somos</p>
+        <h2 data-i18n="about.title">Conocemos cada local de Ibiza: quién es el propietario, quién el inquilino y qué potencial comercial tiene.</h2>
+        <p class="lede" data-i18n="about.body">Alorac es una consultoría de real estate fundada en 2011 por Carola Nicolàs, abogada y referente del sector retail en las Islas Baleares. No trabajamos con listados públicos: operamos por conocimiento directo del mercado y discreción con cada operación.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow" data-i18n="serv.eyebrow">Servicios</p>
+        <h2 data-i18n="serv.title">Un acompañamiento integral, del análisis a la firma.</h2>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pn">01</div>
+          <h3 data-i18n="serv.1t">Estudios de mercado</h3>
+          <p data-i18n="serv.1b">Análisis de rentabilidad, rentas medias por m² y demanda real por ubicación para decidir con datos.</p>
+        </div>
+        <div class="pillar">
+          <div class="pn">02</div>
+          <h3 data-i18n="serv.2t">Valoración de inmuebles</h3>
+          <p data-i18n="serv.2b">Estimación de valor y renta de mercado para negociar desde una posición informada.</p>
+        </div>
+        <div class="pillar">
+          <div class="pn">03</div>
+          <h3 data-i18n="serv.3t">Gestión integral</h3>
+          <p data-i18n="serv.3b">Tramitación de licencias, seguimiento de obra y red de proveedores, constructoras e industriales locales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="insights">
     <div class="wrap">
       <div class="sec-head">
@@ -657,7 +664,7 @@
       "serv.1t":"Estudios de mercado","serv.1b":"Análisis de rentabilidad, rentas medias por m² y demanda real por ubicación para decidir con datos.",
       "serv.2t":"Valoración de inmuebles","serv.2b":"Estimación de valor y renta de mercado para negociar desde una posición informada.",
       "serv.3t":"Gestión integral","serv.3b":"Tramitación de licencias, seguimiento de obra y red de proveedores, constructoras e industriales locales.",
-      "track.eyebrow":"Trayectoria","track.title":"Marcas que han confiado en Alorac para su implantación en Ibiza.",
+      "track.eyebrow":"Trayectoria","track.title":"Marcas que han confiado en Alorac",
       "track.note":"Los nombres se sustituirán por los logotipos oficiales de cada marca en la sesión de producción.",
       "ins.eyebrow":"La ventaja Alorac","ins.title":"Por qué las marcas líderes eligen a Alorac para entrar en Ibiza.",
       "ins.intro":"No competimos por listados ni por precio. Competimos por conocimiento directo del mercado y acceso a los locales que importan.",
@@ -696,7 +703,7 @@
       "serv.1t":"Market studies","serv.1b":"Yield analysis, average rents per m² and real demand by location, so you decide with data.",
       "serv.2t":"Property valuation","serv.2b":"Value and market-rent estimates so you negotiate from an informed position.",
       "serv.3t":"Full management","serv.3b":"Licensing, works supervision and a network of local suppliers, builders and contractors.",
-      "track.eyebrow":"Track record","track.title":"Brands that have trusted Alorac to open in Ibiza.",
+      "track.eyebrow":"Track record","track.title":"Brands that have trusted Alorac",
       "track.note":"Brand names will be replaced with official logos during the production session.",
       "ins.eyebrow":"The Alorac edge","ins.title":"Why leading brands choose Alorac to enter Ibiza.",
       "ins.intro":"We don't compete on listings or price. We compete on direct market knowledge and access to the units that matter.",
@@ -735,7 +742,7 @@
       "serv.1t":"Marktstudien","serv.1b":"Renditeanalyse, durchschnittliche Mieten pro m² und reale Nachfrage je Lage — damit Sie mit Daten entscheiden.",
       "serv.2t":"Immobilienbewertung","serv.2b":"Wert- und Marktmietschätzung, damit Sie aus einer informierten Position verhandeln.",
       "serv.3t":"Komplette Betreuung","serv.3b":"Genehmigungen, Baubegleitung und ein Netz lokaler Dienstleister, Bauunternehmen und Handwerker.",
-      "track.eyebrow":"Referenzen","track.title":"Marken, die Alorac ihre Ansiedlung in Ibiza anvertraut haben.",
+      "track.eyebrow":"Referenzen","track.title":"Marken, die Alorac vertrauen",
       "track.note":"Die Markennamen werden in der Produktionssitzung durch die offiziellen Logos ersetzt.",
       "ins.eyebrow":"Der Alorac-Vorteil","ins.title":"Warum führende Marken für den Eintritt in Ibiza auf Alorac setzen.",
       "ins.intro":"Wir konkurrieren nicht über Listings oder Preis, sondern über direkte Marktkenntnis und Zugang zu den Flächen, die zählen.",
