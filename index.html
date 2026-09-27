@@ -185,7 +185,8 @@
   /* logo de color muy claro (Melé Beach): sobre el chip claro no contrasta; celda oscura en vez de recolorear el logo */
   .brandwall li.soft{background:#3B342A;box-shadow:inset 0 0 0 1px rgba(22,19,15,.12)}
   .brandwall img{display:block;width:100%;height:100%;max-height:30px;object-fit:contain}
-  .band-photos{padding-block:48px;border-bottom:1px solid var(--line-2)}
+  /* tira de fotos de locales bajo «Quiénes somos» */
+  #quienes .marquee.photos{margin-top:8px}
   .photostrip li{flex:0 0 auto}
   .photostrip img{display:block;height:220px;width:auto;max-width:none;border-radius:4px}
   @media (max-width:600px){.brandwall li{width:112px;height:52px;padding:8px 10px}.photostrip img{height:160px}}
@@ -481,36 +482,7 @@
         <p class="lede" data-i18n="about.body">Alorac es una consultoría de real estate fundada en 2011 por Carola Nicolàs, abogada y referente del sector retail en las Islas Baleares. No trabajamos con listados públicos: operamos por conocimiento directo del mercado y discreción con cada operación.</p>
       </div>
     </div>
-  </section>
-
-  <section id="servicios">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow" data-i18n="serv.eyebrow">Servicios</p>
-        <h2 data-i18n="serv.title">Un acompañamiento integral, del análisis a la firma.</h2>
-      </div>
-      <div class="pillars">
-        <div class="pillar">
-          <div class="pn">01</div>
-          <h3 data-i18n="serv.1t">Estudios de mercado</h3>
-          <p data-i18n="serv.1b">Análisis de rentabilidad, rentas medias por m² y demanda real por ubicación para decidir con datos.</p>
-        </div>
-        <div class="pillar">
-          <div class="pn">02</div>
-          <h3 data-i18n="serv.2t">Valoración de inmuebles</h3>
-          <p data-i18n="serv.2b">Estimación de valor y renta de mercado para negociar desde una posición informada.</p>
-        </div>
-        <div class="pillar">
-          <div class="pn">03</div>
-          <h3 data-i18n="serv.3t">Gestión integral</h3>
-          <p data-i18n="serv.3b">Tramitación de licencias, seguimiento de obra y red de proveedores, constructoras e industriales locales.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="band-photos">
-    <div class="marquee photos" style="margin-top:0" aria-label="Locales">
+    <div class="marquee photos" aria-label="Locales">
       <ul class="marquee-track photostrip" style="--dur:120s">
       <li><img src="assets/locales/philipp-plein.jpg" alt="Philipp Plein, Marina Ibiza" width="587" height="440" loading="lazy"></li>
       <li><img src="assets/locales/louis-vuitton.jpg" alt="Louis Vuitton, Ibiza" width="741" height="440" loading="lazy"></li>
@@ -542,7 +514,33 @@
       <li aria-hidden="true"><img src="assets/locales/calma-house.jpg" alt="" width="587" height="440" loading="lazy"></li>
       </ul>
     </div>
-  </div>
+  </section>
+
+  <section id="servicios">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow" data-i18n="serv.eyebrow">Servicios</p>
+        <h2 data-i18n="serv.title">Un acompañamiento integral, del análisis a la firma.</h2>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pn">01</div>
+          <h3 data-i18n="serv.1t">Estudios de mercado</h3>
+          <p data-i18n="serv.1b">Análisis de rentabilidad, rentas medias por m² y demanda real por ubicación para decidir con datos.</p>
+        </div>
+        <div class="pillar">
+          <div class="pn">02</div>
+          <h3 data-i18n="serv.2t">Valoración de inmuebles</h3>
+          <p data-i18n="serv.2b">Estimación de valor y renta de mercado para negociar desde una posición informada.</p>
+        </div>
+        <div class="pillar">
+          <div class="pn">03</div>
+          <h3 data-i18n="serv.3t">Gestión integral</h3>
+          <p data-i18n="serv.3b">Tramitación de licencias, seguimiento de obra y red de proveedores, constructoras e industriales locales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section id="insights">
     <div class="wrap">
