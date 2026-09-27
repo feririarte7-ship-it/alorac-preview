@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"RealEstateAgent","name":"Alorac","legalName":"Alorac Illes Balears, S.L.","url":"https://alorac.com/","email":"carola@alorac.com","telephone":"+34 659 301 154","foundingDate":"2011","founder":{"@type":"Person","name":"Carola Nicolàs"},"areaServed":"Illes Balears","address":{"@type":"PostalAddress","addressLocality":"Ibiza","addressRegion":"Illes Balears","addressCountry":"ES"}}
+{"@context":"https://schema.org","@type":"RealEstateAgent","name":"Alorac","legalName":"Alorac Illes Balears, S.L.","url":"https://alorac.com/","logo":"https://alorac.com/assets/alorac-logo.png","email":"carola@alorac.com","telephone":"+34 659 301 154","foundingDate":"2011","founder":{"@type":"Person","name":"Carola Nicolàs"},"areaServed":"Illes Balears","address":{"@type":"PostalAddress","addressLocality":"Ibiza","addressRegion":"Illes Balears","addressCountry":"ES"}}
 </script>
 <style>
   :root{
@@ -102,8 +102,15 @@
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line-2);
   }
-  .nav-in{display:flex;align-items:center;gap:20px;height:64px}
+  .nav-in{display:flex;align-items:center;gap:20px;height:84px}
   .brand{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:.02em;text-decoration:none;line-height:1}
+  /* Logo oficial (PNG transparente). En oscuro, variante con el marrón aclarado */
+  .brand img{display:block;height:62px;width:auto}
+  .brand .logo-dark{display:none}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .brand .logo-light{display:none}:root:not([data-theme="light"]) .brand .logo-dark{display:block}}
+  :root[data-theme="dark"] .brand .logo-light{display:none}
+  :root[data-theme="dark"] .brand .logo-dark{display:block}
+  @media (max-width:600px){.nav-in{height:68px}.brand img{height:48px}}
   .brand small{font-family:var(--sans);font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-top:3px;font-weight:600}
   nav.links{display:flex;gap:26px;margin-left:auto}
   nav.links a{font-size:13.5px;text-decoration:none;color:var(--ink-soft);letter-spacing:.01em}
@@ -122,7 +129,7 @@
   /* Hero a pantalla completa: Dalt Vila (trip1 Travel, Pexels) con viraje sepia horneado en el JPG y velo oscuro.
      Sobre la foto el texto va siempre claro, en tema claro y oscuro: tokens propios del hero */
   .hero{--ink:#F4ECDC;--ink-soft:rgba(244,236,220,.88);--ink-faint:rgba(244,236,220,.72);--brass:#E0C48C;--line:rgba(244,236,220,.30);--line-2:rgba(244,236,220,.16);--paper:#1A130C;
-    position:relative;isolation:isolate;min-height:calc(100svh - 64px);display:flex;align-items:center;padding-block:72px;background:#1A130C;color:var(--ink)}
+    position:relative;isolation:isolate;min-height:calc(100svh - 84px);display:flex;align-items:center;padding-block:72px;background:#1A130C;color:var(--ink)}
   .hero > .wrap{width:100%}
   .hero::before{content:"";position:absolute;inset:0;z-index:-2;background:url("assets/hero-dalt-vila.jpg") 65% 45%/cover no-repeat}
   .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(20,13,7,.74) 0%,rgba(20,13,7,.55) 50%,rgba(20,13,7,.32) 100%),linear-gradient(0deg,rgba(20,13,7,.45) 0%,rgba(20,13,7,0) 45%)}
@@ -262,14 +269,14 @@
   .bot-note{font-size:10px;color:var(--ink-faint);text-align:center;padding:0 16px 12px;letter-spacing:.02em}
 
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-  section{scroll-margin-top:64px}
+  section{scroll-margin-top:84px}
 </style>
 </head>
 <body>
 
 <header class="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="#top">Alorac<small>Illes Balears</small></a>
+    <a class="brand" href="#top" aria-label="Alorac Illes Balears, inicio"><img class="logo-light" src="assets/alorac-logo.png" alt="Alorac Illes Balears" width="720" height="344"><img class="logo-dark" src="assets/alorac-logo-dark.png" alt="" width="720" height="344" aria-hidden="true"></a>
     <nav class="links">
       <a href="#servicios" data-i18n="nav.services">Servicios</a>
       <a href="#trayectoria" data-i18n="nav.track">Trayectoria</a>
