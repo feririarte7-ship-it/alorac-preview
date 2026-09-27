@@ -174,6 +174,7 @@
   .brandcell .logo{align-self:flex-start;background:#FBF8F1;border-radius:6px;width:132px;height:52px;padding:8px 12px;display:flex;align-items:center;justify-content:center;max-width:100%}
   .brandcell .logo img{display:block;height:100%;max-height:34px;width:100%;object-fit:contain}
   .brandcell .ba{font-size:12px;color:var(--ink-faint);margin-top:8px;letter-spacing:.01em}
+  .track::after{content:"";background:var(--paper)} /* rellena la celda vacía (7 destacadas) */
   @media (max-width:820px){.track{grid-template-columns:repeat(2,1fr)}}
   .track-note{margin-top:20px;font-size:12.5px;color:var(--ink-faint)}
   .brandwall{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:10px}
@@ -292,9 +293,9 @@
       <div class="stat-row">
         <div class="stat"><div class="sn">15</div><div class="sl" data-i18n="traj.1l">Años de trayectoria</div></div>
         <div class="stat"><div class="sn">+200</div><div class="sl" data-i18n="traj.2l">Operaciones cerradas</div></div>
-        <div class="stat"><div class="sn">+80</div><div class="sl" data-i18n="traj.3l">Marcas de primer nivel</div></div>
+        <div class="stat"><div class="sn">+40</div><div class="sl" data-i18n="traj.3l">Marcas de primer nivel</div></div>
       </div>
-      <p class="brand-ribbon">Benetton · MAC · FC Barcelona · Bershka · GUESS · Intimissimi · Llongueras · Rituals</p>
+      <p class="brand-ribbon">Benetton · MAC · FC Barcelona · Bershka · GUESS · Intimissimi · Llongueras</p>
       <p class="traj-note" data-i18n="traj.note">Cifras de volumen, sin importes.</p>
     </div>
   </div>
@@ -350,92 +351,54 @@
       <div class="brandcell"><div class="logo"><img src="assets/guess-jeans.png" alt="GUESS" height="32" loading="lazy"></div><div class="ba">C/ de Riambau, 2 · Ibiza</div></div>
       <div class="brandcell"><div class="logo"><img src="assets/intimissimi.svg" alt="Intimissimi" height="32" loading="lazy"></div><div class="ba">Av. Bartolomé Roselló, 24 · Ibiza</div></div>
       <div class="brandcell"><div class="logo"><img src="assets/llongueras.svg" alt="Llongueras" height="32" loading="lazy"></div><div class="ba">C/ Metge Antoni Serra, 1 · Ibiza</div></div>
-      <div class="brandcell"><div class="logo"><img src="assets/rituals.svg" alt="Rituals" height="32" loading="lazy"></div><div class="ba">Av. Bartomeu de Roselló, 7 · Ibiza</div></div>
     </div>
     <div class="wrap">
       <ul class="brandwall" aria-label="Marcas">
       <li><img src="assets/muro/accessorize.png" alt="Accessorize" loading="lazy"></li>
       <li><img src="assets/muro/adolfo-dominguez.png" alt="Adolfo Domínguez" loading="lazy"></li>
-      <li><img src="assets/muro/alainafflelou.png" alt="Alain Afflelou" loading="lazy"></li>
       <li><img src="assets/muro/american-vintage.png" alt="American Vintage" loading="lazy"></li>
       <li><img src="assets/muro/amichi.png" alt="Amichi" loading="lazy"></li>
-      <li><img src="assets/muro/bdba.png" alt="BDBA" loading="lazy"></li>
       <li><img src="assets/muro/benetton.png" alt="Benetton" loading="lazy"></li>
       <li><img src="assets/muro/bershka.png" alt="Bershka" loading="lazy"></li>
       <li><img src="assets/muro/bijou-brigitte.png" alt="Bijou Brigitte" loading="lazy"></li>
       <li><img src="assets/muro/bottega-veneta.png" alt="Bottega Veneta" loading="lazy"></li>
       <li><img src="assets/muro/calzedonia.png" alt="Calzedonia" loading="lazy"></li>
-      <li><img src="assets/muro/carhartt.png" alt="Carhartt" loading="lazy"></li>
       <li><img src="assets/muro/carpisa.png" alt="Carpisa" loading="lazy"></li>
       <li><img src="assets/muro/cbbbc-ibiza.png" alt="CBbC Ibiza" loading="lazy"></li>
-      <li><img src="assets/muro/celio.png" alt="Celio" loading="lazy"></li>
       <li><img src="assets/muro/claires.png" alt="Claire's" loading="lazy"></li>
-      <li><img src="assets/muro/dayaday.png" alt="Dayaday" loading="lazy"></li>
       <li><img src="assets/muro/desigual.png" alt="Desigual" loading="lazy"></li>
       <li><img src="assets/muro/double-agent.png" alt="Double Agent" loading="lazy"></li>
       <li><img src="assets/muro/decimas.png" alt="Décimas" loading="lazy"></li>
-      <li><img src="assets/muro/estee-lauder.png" alt="Estée Lauder" loading="lazy"></li>
-      <li><img src="assets/muro/fita.png" alt="Fita" loading="lazy"></li>
-      <li><img src="assets/muro/flormar_professional-make-up.png" alt="Flormar" loading="lazy"></li>
       <li><img src="assets/muro/fringomania.png" alt="Fringomania" loading="lazy"></li>
-      <li><img src="assets/muro/geox.png" alt="Geox" loading="lazy"></li>
       <li><img src="assets/muro/gucci.png" alt="Gucci" loading="lazy"></li>
       <li><img src="assets/muro/guess-jeans.png" alt="GUESS" loading="lazy"></li>
-      <li><img src="assets/muro/hardrock.png" alt="Hard Rock Cafe" loading="lazy"></li>
       <li><img src="assets/muro/harley-davidson.png" alt="Harley-Davidson" loading="lazy"></li>
-      <li><img src="assets/muro/hermes.png" alt="Hermès" loading="lazy"></li>
-      <li><img src="assets/muro/ibizabyporto.png" alt="Ibiza by Porto" loading="lazy"></li>
-      <li><img src="assets/muro/inside.png" alt="Inside" loading="lazy"></li>
       <li><img src="assets/muro/intimissimi.png" alt="Intimissimi" loading="lazy"></li>
       <li><img src="assets/muro/jack-n-jones.png" alt="Jack & Jones" loading="lazy"></li>
       <li><img src="assets/muro/kiko.png" alt="KIKO Milano" loading="lazy"></li>
       <li><img src="assets/muro/l-occitane.png" alt="L'Occitane" loading="lazy"></li>
-      <li><img src="assets/muro/la-sirena.png" alt="La Sirena" loading="lazy"></li>
       <li><img src="assets/muro/leonce.png" alt="Leonce" loading="lazy"></li>
-      <li><img src="assets/muro/liu-jo.png" alt="Liu Jo" loading="lazy"></li>
       <li><img src="assets/muro/llongueras.png" alt="Llongueras" loading="lazy"></li>
       <li><img src="assets/muro/louis-vuitton.png" alt="Louis Vuitton" loading="lazy"></li>
       <li><img src="assets/muro/mac.png" alt="MAC" loading="lazy"></li>
       <li><img src="assets/muro/macson.png" alt="Macson" loading="lazy"></li>
-      <li><img src="assets/muro/mango.png" alt="Mango" loading="lazy"></li>
-      <li><img src="assets/muro/mango-touch.png" alt="Mango Touch" loading="lazy"></li>
-      <li><img src="assets/muro/marypaz.png" alt="MaryPaz" loading="lazy"></li>
       <li><img src="assets/muro/mc2-saint-barth.png" alt="MC2 Saint Barth" loading="lazy"></li>
-      <li><img src="assets/muro/michael-kors.png" alt="Michael Kors" loading="lazy"></li>
       <li><img src="assets/muro/misako.png" alt="Misako" loading="lazy"></li>
-      <li><img src="assets/muro/mustang.png" alt="Mustang" loading="lazy"></li>
       <li><img src="assets/muro/napapijri.png" alt="Napapijri" loading="lazy"></li>
       <li><img src="assets/muro/nespresso.png" alt="Nespresso" loading="lazy"></li>
       <li><img src="assets/muro/oui-c-moi.png" alt="Oui c'moi" loading="lazy"></li>
       <li><img src="assets/muro/oysho.png" alt="Oysho" loading="lazy"></li>
-      <li><img src="assets/muro/pacha-ibiza.png" alt="Pacha Ibiza" loading="lazy"></li>
-      <li><img src="assets/muro/pepe-jeans.png" alt="Pepe Jeans" loading="lazy"></li>
       <li><img src="assets/muro/philipp-plein.png" alt="Philipp Plein" loading="lazy"></li>
-      <li><img src="assets/muro/pinko.png" alt="Pinko" loading="lazy"></li>
       <li><img src="assets/muro/pull-n-bear.png" alt="Pull&Bear" loading="lazy"></li>
-      <li><img src="assets/muro/revolver.png" alt="Revolver" loading="lazy"></li>
-      <li><img src="assets/muro/rillova.png" alt="Rillova" loading="lazy"></li>
-      <li><img src="assets/muro/rituals.png" alt="Rituals" loading="lazy"></li>
       <li><img src="assets/muro/sephora.png" alt="Sephora" loading="lazy"></li>
       <li><img src="assets/muro/shana.png" alt="Shana" loading="lazy"></li>
       <li><img src="assets/muro/stella-mccartney.png" alt="Stella McCartney" loading="lazy"></li>
-      <li><img src="assets/muro/stradivarius.png" alt="Stradivarius" loading="lazy"></li>
-      <li><img src="assets/muro/sunglass-hut.png" alt="Sunglass Hut" loading="lazy"></li>
       <li><img src="assets/muro/superdry.png" alt="Superdry" loading="lazy"></li>
-      <li><img src="assets/muro/swarovsky.png" alt="Swarovski" loading="lazy"></li>
-      <li><img src="assets/muro/tcn.png" alt="TCN" loading="lazy"></li>
       <li><img src="assets/muro/tezenis.png" alt="Tezenis" loading="lazy"></li>
       <li><img src="assets/muro/the-body-shop.png" alt="The Body Shop" loading="lazy"></li>
-      <li><img src="assets/muro/timberland.png" alt="Timberland" loading="lazy"></li>
-      <li><img src="assets/muro/tous.png" alt="Tous" loading="lazy"></li>
-      <li><img src="assets/muro/unode50.png" alt="UNOde50" loading="lazy"></li>
-      <li><img src="assets/muro/ushuaia_ibiza.png" alt="Ushuaïa Ibiza" loading="lazy"></li>
       <li><img src="assets/muro/vilebrenquin.png" alt="Vilebrequin" loading="lazy"></li>
-      <li><img src="assets/muro/violeta.png" alt="Violeta by Mango" loading="lazy"></li>
       <li><img src="assets/muro/yamaday.png" alt="Yamamay" loading="lazy"></li>
       <li><img src="assets/muro/yves-rocher.png" alt="Yves Rocher" loading="lazy"></li>
-      <li><img src="assets/muro/zara.png" alt="Zara" loading="lazy"></li>
-      <li><img src="assets/muro/zara-home.png" alt="Zara Home" loading="lazy"></li>
       </ul>
     </div>
   </section>
