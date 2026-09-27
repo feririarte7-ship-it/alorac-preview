@@ -185,7 +185,7 @@
   /* logo de color muy claro (Melé Beach): sobre el chip claro no contrasta; celda oscura en vez de recolorear el logo */
   .brandwall li.soft{background:#3B342A;box-shadow:inset 0 0 0 1px rgba(22,19,15,.12)}
   .brandwall img{display:block;width:100%;height:100%;max-height:30px;object-fit:contain}
-  .marquee.photos{margin-top:14px}
+  .band-photos{padding-block:48px;border-bottom:1px solid var(--line-2)}
   .photostrip li{flex:0 0 auto}
   .photostrip img{display:block;height:220px;width:auto;max-width:none;border-radius:4px}
   @media (max-width:600px){.brandwall li{width:112px;height:52px;padding:8px 10px}.photostrip img{height:160px}}
@@ -280,7 +280,7 @@
       <div class="lang" role="group" aria-label="Idioma">
         <button data-lang="es" aria-pressed="true">ES</button>
         <button data-lang="en" aria-pressed="false">EN</button>
-        <button data-lang="de" aria-pressed="false">DE</button>
+        <button data-lang="it" aria-pressed="false">IT</button>
       </div>
       <button class="icobtn" id="theme" aria-label="Tema">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -296,7 +296,7 @@
     <div class="hero-grid">
       <div>
         <p class="eyebrow" data-i18n="hero.eyebrow">Real estate advisory · Ibiza</p>
-        <h1 data-i18n="hero.title">El asesor de referencia en locales comerciales de Ibiza.</h1>
+        <h1 data-i18n="hero.title">El local correcto lo cambia todo.</h1>
         <p class="lede" data-i18n="hero.sub">Desde 2011 acompañamos a las marcas líderes en su implantación en las Islas Baleares. Intermediación, valoración y gestión integral de retail prime.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#oportunidades" data-i18n="hero.cta1">Solicitar una consulta</a>
@@ -325,153 +325,192 @@
     </div>
     <div class="marquee" aria-label="Marcas">
       <ul class="marquee-track brandwall" style="--dur:260s">
-      <li><img src="assets/muro/accessorize.png" alt="Accessorize" loading="lazy"></li>
-      <li><img src="assets/muro/adolfo-dominguez.png" alt="Adolfo Domínguez" loading="lazy"></li>
-      <li><img src="assets/muro/american-vintage.png" alt="American Vintage" loading="lazy"></li>
-      <li><img src="assets/muro/amichi.png" alt="Amichi" loading="lazy"></li>
-      <li><img src="assets/muro/antica-sartoria.svg" alt="Antica Sartoria" loading="lazy"></li>
-      <li><img src="assets/muro/bang-olufsen.svg" alt="Bang &amp; Olufsen" loading="lazy"></li>
-      <li><img src="assets/muro/benetton.png" alt="Benetton" loading="lazy"></li>
-      <li><img src="assets/muro/bershka.png" alt="Bershka" loading="lazy"></li>
-      <li><img src="assets/muro/bijou-brigitte.png" alt="Bijou Brigitte" loading="lazy"></li>
-      <li><img src="assets/muro/bottega-veneta.png" alt="Bottega Veneta" loading="lazy"></li>
-      <li><img src="assets/muro/calma-house.png" alt="Calma House" loading="lazy"></li>
-      <li><img src="assets/muro/calzedonia.png" alt="Calzedonia" loading="lazy"></li>
-      <li><img src="assets/muro/carpisa.png" alt="Carpisa" loading="lazy"></li>
-      <li><img src="assets/muro/cbbbc-ibiza.png" alt="CBbC Ibiza" loading="lazy"></li>
-      <li><img src="assets/muro/charo-ruiz.svg" alt="Charo Ruiz" loading="lazy"></li>
-      <li><img src="assets/muro/claire-luise.png" alt="Claire Luise" loading="lazy"></li>
-      <li><img src="assets/muro/claires.png" alt="Claire's" loading="lazy"></li>
-      <li><img src="assets/muro/decimas.png" alt="Décimas" loading="lazy"></li>
-      <li><img src="assets/muro/desigual.png" alt="Desigual" loading="lazy"></li>
-      <li><img src="assets/muro/dipinca.png" alt="Dipinca" loading="lazy"></li>
-      <li><img src="assets/muro/dolce-gabbana.svg" alt="Dolce &amp; Gabbana" loading="lazy"></li>
-      <li><img src="assets/muro/double-agent.png" alt="Double Agent" loading="lazy"></li>
-      <li><img src="assets/muro/druni.svg" alt="Druni" loading="lazy"></li>
-      <li><img src="assets/muro/etam.svg" alt="Etam" loading="lazy"></li>
-      <li><img src="assets/muro/fc-barcelona.png" alt="FC Barcelona" loading="lazy"></li>
-      <li><img src="assets/muro/fringomania.png" alt="Fringomania" loading="lazy"></li>
-      <li><img src="assets/muro/gerry.png" alt="Gerry St. Tropez" loading="lazy"></li>
-      <li><img src="assets/muro/gucci.png" alt="Gucci" loading="lazy"></li>
-      <li><img src="assets/muro/guess-jeans.png" alt="GUESS" loading="lazy"></li>
-      <li><img src="assets/muro/harley-davidson.png" alt="Harley-Davidson" loading="lazy"></li>
-      <li><img src="assets/muro/havaianas.svg" alt="Havaianas" loading="lazy"></li>
-      <li><img src="assets/muro/intimissimi.png" alt="Intimissimi" loading="lazy"></li>
-      <li><img src="assets/muro/intimissimi-uomo.png" alt="Intimissimi Uomo" loading="lazy"></li>
-      <li><img src="assets/muro/jack-n-jones.png" alt="Jack & Jones" loading="lazy"></li>
-      <li><img src="assets/muro/kiko.png" alt="KIKO Milano" loading="lazy"></li>
-      <li><img src="assets/muro/koala-bay.png" alt="Koala Bay" loading="lazy"></li>
-      <li><img src="assets/muro/l-occitane.png" alt="L'Occitane" loading="lazy"></li>
-      <li><img src="assets/muro/leonce.png" alt="Leonce" loading="lazy"></li>
-      <li><img src="assets/muro/levis.svg" alt="Levi's" loading="lazy"></li>
-      <li><img src="assets/muro/llongueras.png" alt="Llongueras" loading="lazy"></li>
-      <li><img src="assets/muro/louis-vuitton.png" alt="Louis Vuitton" loading="lazy"></li>
-      <li><img src="assets/muro/mac.png" alt="MAC" loading="lazy"></li>
-      <li><img src="assets/muro/macson.png" alt="Macson" loading="lazy"></li>
-      <li><img src="assets/muro/maje.svg" alt="Maje" loading="lazy"></li>
-      <li><img src="assets/muro/massimo-dutti.svg" alt="Massimo Dutti" loading="lazy"></li>
-      <li><img src="assets/muro/mc2-saint-barth.png" alt="MC2 Saint Barth" loading="lazy"></li>
-      <li class="soft"><img src="assets/muro/mele-beach.png" alt="Melé Beach" loading="lazy"></li>
-      <li><img src="assets/muro/misako.png" alt="Misako" loading="lazy"></li>
-      <li><img src="assets/muro/napapijri.png" alt="Napapijri" loading="lazy"></li>
-      <li><img src="assets/muro/nespresso.png" alt="Nespresso" loading="lazy"></li>
-      <li><img src="assets/muro/nort-beachwear.png" alt="Nort Beachwear" loading="lazy"></li>
-      <li><img src="assets/muro/nude-project.svg" alt="Nude Project" loading="lazy"></li>
-      <li><img src="assets/muro/oui-c-moi.png" alt="Oui c'moi" loading="lazy"></li>
-      <li><img src="assets/muro/oysho.png" alt="Oysho" loading="lazy"></li>
-      <li><img src="assets/muro/philipp-plein.png" alt="Philipp Plein" loading="lazy"></li>
-      <li><img src="assets/muro/primor.png" alt="Primor" loading="lazy"></li>
-      <li><img src="assets/muro/pull-n-bear.png" alt="Pull&Bear" loading="lazy"></li>
-      <li><img src="assets/muro/sandro.svg" alt="Sandro" loading="lazy"></li>
-      <li><img src="assets/muro/sephora.png" alt="Sephora" loading="lazy"></li>
-      <li><img src="assets/muro/shana.png" alt="Shana" loading="lazy"></li>
-      <li><img src="assets/muro/stella-mccartney.png" alt="Stella McCartney" loading="lazy"></li>
-      <li><img src="assets/muro/sundek.png" alt="Sundek" loading="lazy"></li>
-      <li><img src="assets/muro/superdry.png" alt="Superdry" loading="lazy"></li>
-      <li><img src="assets/muro/tezenis.png" alt="Tezenis" loading="lazy"></li>
-      <li><img src="assets/muro/the-body-shop.png" alt="The Body Shop" loading="lazy"></li>
-      <li><img src="assets/muro/viandas.png" alt="Viandas" loading="lazy"></li>
-      <li><img src="assets/muro/vilebrenquin.png" alt="Vilebrequin" loading="lazy"></li>
-      <li><img src="assets/muro/virginia-vald.png" alt="Virginia Vald" loading="lazy"></li>
-      <li><img src="assets/muro/yamaday.png" alt="Yamamay" loading="lazy"></li>
-      <li><img src="assets/muro/yves-rocher.png" alt="Yves Rocher" loading="lazy"></li>
-      <li><img src="assets/muro/zadig-voltaire.svg" alt="Zadig &amp; Voltaire" loading="lazy"></li>
-      <li><img src="assets/muro/zimmermann.svg" alt="Zimmermann" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/accessorize.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/adolfo-dominguez.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/american-vintage.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/amichi.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/antica-sartoria.svg" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/bang-olufsen.svg" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/benetton.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/bershka.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/bijou-brigitte.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/bottega-veneta.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/calma-house.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/calzedonia.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/carpisa.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/cbbbc-ibiza.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/charo-ruiz.svg" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/claire-luise.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/claires.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/decimas.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/desigual.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/dipinca.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/dolce-gabbana.svg" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/double-agent.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/druni.svg" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/etam.svg" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/fc-barcelona.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/fringomania.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/gerry.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/gucci.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/guess-jeans.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/harley-davidson.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/havaianas.svg" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/intimissimi.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/intimissimi-uomo.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/jack-n-jones.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/kiko.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/koala-bay.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/l-occitane.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/leonce.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/levis.svg" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/llongueras.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/louis-vuitton.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/mac.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/macson.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/maje.svg" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/massimo-dutti.svg" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/mc2-saint-barth.png" alt="" loading="lazy"></li>
-      <li class="soft" aria-hidden="true"><img src="assets/muro/mele-beach.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/misako.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/napapijri.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/nespresso.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/nort-beachwear.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/nude-project.svg" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/oui-c-moi.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/oysho.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/philipp-plein.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/primor.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/pull-n-bear.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/sandro.svg" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/sephora.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/shana.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/stella-mccartney.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/sundek.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/superdry.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/tezenis.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/the-body-shop.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/viandas.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/vilebrenquin.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/virginia-vald.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/yamaday.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/yves-rocher.png" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/zadig-voltaire.svg" alt="" loading="lazy"></li>
-      <li aria-hidden="true"><img src="assets/muro/zimmermann.svg" alt="" loading="lazy"></li>
+      <li><img src="assets/muro/accessorize.png" alt="Accessorize"></li>
+      <li><img src="assets/muro/adolfo-dominguez.png" alt="Adolfo Domínguez"></li>
+      <li><img src="assets/muro/american-vintage.png" alt="American Vintage"></li>
+      <li><img src="assets/muro/amichi.png" alt="Amichi"></li>
+      <li><img src="assets/muro/antica-sartoria.svg" alt="Antica Sartoria"></li>
+      <li><img src="assets/muro/bang-olufsen.svg" alt="Bang &amp; Olufsen"></li>
+      <li><img src="assets/muro/benetton.png" alt="Benetton"></li>
+      <li><img src="assets/muro/bershka.png" alt="Bershka"></li>
+      <li><img src="assets/muro/bijou-brigitte.png" alt="Bijou Brigitte"></li>
+      <li><img src="assets/muro/bottega-veneta.png" alt="Bottega Veneta"></li>
+      <li><img src="assets/muro/calma-house.png" alt="Calma House"></li>
+      <li><img src="assets/muro/calzedonia.png" alt="Calzedonia"></li>
+      <li><img src="assets/muro/carpisa.png" alt="Carpisa"></li>
+      <li><img src="assets/muro/cbbbc-ibiza.png" alt="CBbC Ibiza"></li>
+      <li><img src="assets/muro/charo-ruiz.svg" alt="Charo Ruiz"></li>
+      <li><img src="assets/muro/claire-luise.png" alt="Claire Luise"></li>
+      <li><img src="assets/muro/claires.png" alt="Claire's"></li>
+      <li><img src="assets/muro/decimas.png" alt="Décimas"></li>
+      <li><img src="assets/muro/desigual.png" alt="Desigual"></li>
+      <li><img src="assets/muro/dipinca.png" alt="Dipinca"></li>
+      <li><img src="assets/muro/dolce-gabbana.svg" alt="Dolce &amp; Gabbana"></li>
+      <li><img src="assets/muro/double-agent.png" alt="Double Agent"></li>
+      <li><img src="assets/muro/druni.svg" alt="Druni"></li>
+      <li><img src="assets/muro/etam.svg" alt="Etam"></li>
+      <li><img src="assets/muro/fc-barcelona.png" alt="FC Barcelona"></li>
+      <li><img src="assets/muro/fringomania.png" alt="Fringomania"></li>
+      <li><img src="assets/muro/gerry.png" alt="Gerry St. Tropez"></li>
+      <li><img src="assets/muro/gucci.png" alt="Gucci"></li>
+      <li><img src="assets/muro/guess-jeans.png" alt="GUESS"></li>
+      <li><img src="assets/muro/harley-davidson.png" alt="Harley-Davidson"></li>
+      <li><img src="assets/muro/havaianas.svg" alt="Havaianas"></li>
+      <li><img src="assets/muro/intimissimi.png" alt="Intimissimi"></li>
+      <li><img src="assets/muro/intimissimi-uomo.png" alt="Intimissimi Uomo"></li>
+      <li><img src="assets/muro/jack-n-jones.png" alt="Jack & Jones"></li>
+      <li><img src="assets/muro/kiko.png" alt="KIKO Milano"></li>
+      <li><img src="assets/muro/koala-bay.png" alt="Koala Bay"></li>
+      <li><img src="assets/muro/l-occitane.png" alt="L'Occitane"></li>
+      <li><img src="assets/muro/leonce.png" alt="Leonce"></li>
+      <li><img src="assets/muro/levis.svg" alt="Levi's"></li>
+      <li><img src="assets/muro/llongueras.png" alt="Llongueras"></li>
+      <li><img src="assets/muro/louis-vuitton.png" alt="Louis Vuitton"></li>
+      <li><img src="assets/muro/mac.png" alt="MAC"></li>
+      <li><img src="assets/muro/macson.png" alt="Macson"></li>
+      <li><img src="assets/muro/maje.svg" alt="Maje"></li>
+      <li><img src="assets/muro/massimo-dutti.svg" alt="Massimo Dutti"></li>
+      <li><img src="assets/muro/mc2-saint-barth.png" alt="MC2 Saint Barth"></li>
+      <li class="soft"><img src="assets/muro/mele-beach.png" alt="Melé Beach"></li>
+      <li><img src="assets/muro/misako.png" alt="Misako"></li>
+      <li><img src="assets/muro/napapijri.png" alt="Napapijri"></li>
+      <li><img src="assets/muro/nespresso.png" alt="Nespresso"></li>
+      <li><img src="assets/muro/nort-beachwear.png" alt="Nort Beachwear"></li>
+      <li><img src="assets/muro/nude-project.svg" alt="Nude Project"></li>
+      <li><img src="assets/muro/oui-c-moi.png" alt="Oui c'moi"></li>
+      <li><img src="assets/muro/oysho.png" alt="Oysho"></li>
+      <li><img src="assets/muro/philipp-plein.png" alt="Philipp Plein"></li>
+      <li><img src="assets/muro/primor.png" alt="Primor"></li>
+      <li><img src="assets/muro/pull-n-bear.png" alt="Pull&Bear"></li>
+      <li><img src="assets/muro/sandro.svg" alt="Sandro"></li>
+      <li><img src="assets/muro/sephora.png" alt="Sephora"></li>
+      <li><img src="assets/muro/shana.png" alt="Shana"></li>
+      <li><img src="assets/muro/stella-mccartney.png" alt="Stella McCartney"></li>
+      <li><img src="assets/muro/sundek.png" alt="Sundek"></li>
+      <li><img src="assets/muro/superdry.png" alt="Superdry"></li>
+      <li><img src="assets/muro/tezenis.png" alt="Tezenis"></li>
+      <li><img src="assets/muro/the-body-shop.png" alt="The Body Shop"></li>
+      <li><img src="assets/muro/viandas.png" alt="Viandas"></li>
+      <li><img src="assets/muro/vilebrenquin.png" alt="Vilebrequin"></li>
+      <li><img src="assets/muro/virginia-vald.png" alt="Virginia Vald"></li>
+      <li><img src="assets/muro/yamaday.png" alt="Yamamay"></li>
+      <li><img src="assets/muro/yves-rocher.png" alt="Yves Rocher"></li>
+      <li><img src="assets/muro/zadig-voltaire.svg" alt="Zadig &amp; Voltaire"></li>
+      <li><img src="assets/muro/zimmermann.svg" alt="Zimmermann"></li>
+      <li aria-hidden="true"><img src="assets/muro/accessorize.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/adolfo-dominguez.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/american-vintage.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/amichi.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/antica-sartoria.svg" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/bang-olufsen.svg" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/benetton.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/bershka.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/bijou-brigitte.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/bottega-veneta.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/calma-house.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/calzedonia.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/carpisa.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/cbbbc-ibiza.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/charo-ruiz.svg" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/claire-luise.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/claires.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/decimas.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/desigual.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/dipinca.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/dolce-gabbana.svg" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/double-agent.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/druni.svg" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/etam.svg" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/fc-barcelona.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/fringomania.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/gerry.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/gucci.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/guess-jeans.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/harley-davidson.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/havaianas.svg" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/intimissimi.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/intimissimi-uomo.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/jack-n-jones.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/kiko.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/koala-bay.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/l-occitane.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/leonce.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/levis.svg" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/llongueras.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/louis-vuitton.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/mac.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/macson.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/maje.svg" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/massimo-dutti.svg" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/mc2-saint-barth.png" alt=""></li>
+      <li class="soft" aria-hidden="true"><img src="assets/muro/mele-beach.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/misako.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/napapijri.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/nespresso.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/nort-beachwear.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/nude-project.svg" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/oui-c-moi.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/oysho.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/philipp-plein.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/primor.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/pull-n-bear.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/sandro.svg" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/sephora.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/shana.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/stella-mccartney.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/sundek.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/superdry.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/tezenis.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/the-body-shop.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/viandas.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/vilebrenquin.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/virginia-vald.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/yamaday.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/yves-rocher.png" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/zadig-voltaire.svg" alt=""></li>
+      <li aria-hidden="true"><img src="assets/muro/zimmermann.svg" alt=""></li>
       </ul>
     </div>
-    <div class="marquee photos" aria-label="Locales">
+  </section>
+
+  <section id="quienes">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow" data-i18n="about.eyebrow">Quiénes somos</p>
+        <h2 data-i18n="about.title">15 años leyendo el mercado de Ibiza.</h2>
+        <p class="lede" data-i18n="about.body">Alorac es una consultoría de real estate fundada en 2011 por Carola Nicolàs, abogada y referente del sector retail en las Islas Baleares. No trabajamos con listados públicos: operamos por conocimiento directo del mercado y discreción con cada operación.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow" data-i18n="serv.eyebrow">Servicios</p>
+        <h2 data-i18n="serv.title">Un acompañamiento integral, del análisis a la firma.</h2>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pn">01</div>
+          <h3 data-i18n="serv.1t">Estudios de mercado</h3>
+          <p data-i18n="serv.1b">Análisis de rentabilidad, rentas medias por m² y demanda real por ubicación para decidir con datos.</p>
+        </div>
+        <div class="pillar">
+          <div class="pn">02</div>
+          <h3 data-i18n="serv.2t">Valoración de inmuebles</h3>
+          <p data-i18n="serv.2b">Estimación de valor y renta de mercado para negociar desde una posición informada.</p>
+        </div>
+        <div class="pillar">
+          <div class="pn">03</div>
+          <h3 data-i18n="serv.3t">Gestión integral</h3>
+          <p data-i18n="serv.3b">Tramitación de licencias, seguimiento de obra y red de proveedores, constructoras e industriales locales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="band-photos">
+    <div class="marquee photos" style="margin-top:0" aria-label="Locales">
       <ul class="marquee-track photostrip" style="--dur:120s">
       <li><img src="assets/locales/philipp-plein.jpg" alt="Philipp Plein, Marina Ibiza" width="587" height="440" loading="lazy"></li>
       <li><img src="assets/locales/louis-vuitton.jpg" alt="Louis Vuitton, Ibiza" width="741" height="440" loading="lazy"></li>
@@ -503,43 +542,7 @@
       <li aria-hidden="true"><img src="assets/locales/calma-house.jpg" alt="" width="587" height="440" loading="lazy"></li>
       </ul>
     </div>
-  </section>
-
-  <section id="quienes">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow" data-i18n="about.eyebrow">Quiénes somos</p>
-        <h2 data-i18n="about.title">Conocemos cada local de Ibiza: quién es el propietario, quién el inquilino y qué potencial comercial tiene.</h2>
-        <p class="lede" data-i18n="about.body">Alorac es una consultoría de real estate fundada en 2011 por Carola Nicolàs, abogada y referente del sector retail en las Islas Baleares. No trabajamos con listados públicos: operamos por conocimiento directo del mercado y discreción con cada operación.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="servicios">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow" data-i18n="serv.eyebrow">Servicios</p>
-        <h2 data-i18n="serv.title">Un acompañamiento integral, del análisis a la firma.</h2>
-      </div>
-      <div class="pillars">
-        <div class="pillar">
-          <div class="pn">01</div>
-          <h3 data-i18n="serv.1t">Estudios de mercado</h3>
-          <p data-i18n="serv.1b">Análisis de rentabilidad, rentas medias por m² y demanda real por ubicación para decidir con datos.</p>
-        </div>
-        <div class="pillar">
-          <div class="pn">02</div>
-          <h3 data-i18n="serv.2t">Valoración de inmuebles</h3>
-          <p data-i18n="serv.2b">Estimación de valor y renta de mercado para negociar desde una posición informada.</p>
-        </div>
-        <div class="pillar">
-          <div class="pn">03</div>
-          <h3 data-i18n="serv.3t">Gestión integral</h3>
-          <p data-i18n="serv.3b">Tramitación de licencias, seguimiento de obra y red de proveedores, constructoras e industriales locales.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
 
   <section id="insights">
     <div class="wrap">
@@ -651,14 +654,14 @@
     es:{
       "nav.services":"Servicios","nav.track":"Trayectoria","nav.insights":"Mercado","nav.opp":"Oportunidades","nav.contact":"Contacto","nav.cta":"Solicitar consulta",
       "hero.eyebrow":"Real estate advisory · Ibiza",
-      "hero.title":"El asesor de referencia en locales comerciales de Ibiza.",
+      "hero.title":"El local correcto lo cambia todo.",
       "hero.sub":"Desde 2011 acompañamos a las marcas líderes en su implantación en las Islas Baleares. Intermediación, valoración y gestión integral de retail prime.",
       "hero.cta1":"Solicitar una consulta","hero.cta2":"Ver trayectoria",
       "hero.m1":"Año de fundación","hero.m2":"Años en el mercado","hero.m3":"Solo retail comercial",
       "slot.hero":"Local prime / calle comercial de Ibiza (Vara de Rey, Marina)",
       "traj.eyebrow":"Trayectoria en volumen","traj.tag":"Reemplazar","traj.1l":"Años de trayectoria","traj.2l":"Operaciones cerradas","traj.3l":"Marcas de primer nivel","traj.4l":"Zonas comerciales prime","traj.note":"Cifras de volumen, sin importes.",
       "about.eyebrow":"Quiénes somos",
-      "about.title":"Conocemos cada local de Ibiza: quién es el propietario, quién el inquilino y qué potencial comercial tiene.",
+      "about.title":"15 años leyendo el mercado de Ibiza.",
       "about.body":"Alorac es una consultoría de real estate fundada en 2011 por Carola Nicolàs, abogada y referente del sector retail en las Islas Baleares. No trabajamos con listados públicos: operamos por conocimiento directo del mercado y discreción con cada operación.",
       "serv.eyebrow":"Servicios","serv.title":"Un acompañamiento integral, del análisis a la firma.",
       "serv.1t":"Estudios de mercado","serv.1b":"Análisis de rentabilidad, rentas medias por m² y demanda real por ubicación para decidir con datos.",
@@ -690,14 +693,14 @@
     en:{
       "nav.services":"Services","nav.track":"Track record","nav.insights":"Market","nav.opp":"Opportunities","nav.contact":"Contact","nav.cta":"Request a consultation",
       "hero.eyebrow":"Real estate advisory · Ibiza",
-      "hero.title":"Ibiza's reference advisor for prime commercial retail.",
+      "hero.title":"The right unit changes everything.",
       "hero.sub":"Since 2011 we have guided leading brands into the Balearic Islands. Brokerage, valuation and end-to-end management of prime retail.",
       "hero.cta1":"Request a consultation","hero.cta2":"See track record",
       "hero.m1":"Founded","hero.m2":"Years in the market","hero.m3":"Commercial retail only",
       "slot.hero":"Prime unit / commercial street in Ibiza (Vara de Rey, Marina)",
       "traj.eyebrow":"Track record in numbers","traj.tag":"To complete","traj.1l":"Years of track record","traj.2l":"Deals closed","traj.3l":"First-tier brands","traj.4l":"Prime retail zones","traj.note":"Volume figures, no amounts.",
       "about.eyebrow":"Who we are",
-      "about.title":"We know every retail unit in Ibiza: who owns it, who leases it, and what commercial potential it holds.",
+      "about.title":"15 years reading the Ibiza market.",
       "about.body":"Alorac is a real estate consultancy founded in 2011 by Carola Nicolàs, a lawyer and a reference in Balearic retail. We do not work with public listings: we operate on direct market knowledge and discretion on every deal.",
       "serv.eyebrow":"Services","serv.title":"End-to-end guidance, from analysis to signing.",
       "serv.1t":"Market studies","serv.1b":"Yield analysis, average rents per m² and real demand by location, so you decide with data.",
@@ -726,44 +729,44 @@
       "bot.r3":"I'll connect you with the team: write to carola@alorac.com or +34 659 301 154. In production this chat continues directly on WhatsApp.",
       "bot.copied":"Copied"
     },
-    de:{
-      "nav.services":"Leistungen","nav.track":"Referenzen","nav.insights":"Markt","nav.opp":"Angebote","nav.contact":"Kontakt","nav.cta":"Beratung anfragen",
-      "hero.eyebrow":"Immobilienberatung · Ibiza",
-      "hero.title":"Der führende Berater für Gewerbeflächen in Ibiza.",
-      "hero.sub":"Seit 2011 begleiten wir führende Marken bei ihrer Ansiedlung auf den Balearen. Vermittlung, Bewertung und komplette Betreuung von Premium-Einzelhandelsflächen.",
-      "hero.cta1":"Beratung anfragen","hero.cta2":"Referenzen ansehen",
-      "hero.m1":"Gegründet","hero.m2":"Jahre am Markt","hero.m3":"Nur Gewerbeflächen",
-      "slot.hero":"Premium-Fläche / Einkaufsstraße in Ibiza (Vara de Rey, Marina)",
-      "traj.eyebrow":"Referenzen in Zahlen","traj.tag":"Ergänzen","traj.1l":"Jahre am Markt","traj.2l":"Abgeschlossene Transaktionen","traj.3l":"Top-Marken","traj.4l":"Prime-Lagen","traj.note":"Volumenzahlen, keine Beträge.",
-      "about.eyebrow":"Wer wir sind",
-      "about.title":"Wir kennen jede Gewerbefläche Ibizas: den Eigentümer, den Mieter und das kommerzielle Potenzial.",
-      "about.body":"Alorac ist eine Immobilienberatung, 2011 gegründet von Carola Nicolàs, Juristin und Referenz im balearischen Einzelhandel. Wir arbeiten nicht mit öffentlichen Listings: wir handeln aus direkter Marktkenntnis und mit Diskretion bei jeder Transaktion.",
-      "serv.eyebrow":"Leistungen","serv.title":"Ganzheitliche Begleitung, von der Analyse bis zur Unterschrift.",
-      "serv.1t":"Marktstudien","serv.1b":"Renditeanalyse, durchschnittliche Mieten pro m² und reale Nachfrage je Lage — damit Sie mit Daten entscheiden.",
-      "serv.2t":"Immobilienbewertung","serv.2b":"Wert- und Marktmietschätzung, damit Sie aus einer informierten Position verhandeln.",
-      "serv.3t":"Komplette Betreuung","serv.3b":"Genehmigungen, Baubegleitung und ein Netz lokaler Dienstleister, Bauunternehmen und Handwerker.",
-      "track.eyebrow":"Referenzen","track.title":"Marken, die Alorac vertrauen",
-      "track.note":"Die Markennamen werden in der Produktionssitzung durch die offiziellen Logos ersetzt.",
-      "ins.eyebrow":"Der Alorac-Vorteil","ins.title":"Warum führende Marken für den Eintritt in Ibiza auf Alorac setzen.",
-      "ins.intro":"Wir konkurrieren nicht über Listings oder Preis, sondern über direkte Marktkenntnis und Zugang zu den Flächen, die zählen.",
-      "ins.1l":"Zugang zum Eigentümer","ins.1c":"Direkter Draht zu den Eigentümern der Premium-Flächen Ibizas — keine offenen Listings.",
-      "ins.2l":"Standort-Urteil","ins.2c":"Wir prüfen, ob Fläche, Branche und Zielpublikum der Marke wirklich zusammenpassen.",
-      "ins.3l":"Diskrete Abwicklung","ins.3c":"Vermietung, Übernahme oder Verkauf abseits des offenen Marktes, vertraulich.",
-      "opp.eyebrow":"Angebote auf Anfrage","opp.title":"Wir veröffentlichen keine Objekte. Wir zeigen sie dem passenden Interessenten.",
-      "opp.body":"Jede Fläche wird diskret behandelt. Sagen Sie uns, was Sie suchen —oder was Sie vermieten, übertragen oder verkaufen möchten— und wir melden uns mit den passenden Optionen.",
-      "form.done":"Danke. Wir haben Ihre Anfrage erhalten und melden uns in Kürze.",
-      "form.name":"Name","form.contact":"E-Mail oder Telefon","form.type":"Art der Anfrage",
-      "form.o1":"Ich suche eine Fläche","form.o2":"Meine Fläche vermieten","form.o3":"Übertragen / verkaufen","form.o4":"Bewertung / Anfrage",
-      "form.msg":"Nachricht","form.submit":"Anfrage senden",
-      "contact.eyebrow":"Kontakt","contact.title":"Sprechen wir über Ihren nächsten Standort.","contact.email":"E-Mail","contact.phone":"Telefon","contact.copy":"Kopieren",
-      "footer.tag":"Beratung für Gewerbeimmobilien seit 2011",
-      "bot.open":"Fragen","bot.sub":"Sofortige Antwort · 24/7","bot.note":"Demo · der Assistent wird in Produktion mit WhatsApp verbunden",
-      "bot.hello":"Hallo 👋 Ich bin der Alorac-Assistent. Wie kann ich helfen?",
-      "bot.c1":"Ich suche eine Fläche in Ibiza","bot.c2":"Ich möchte meine vermieten/übertragen","bot.c3":"Mit Carola sprechen",
-      "bot.r1":"Sehr gern. Alorac arbeitet auf Anfrage, nicht über öffentliche Listings. Nennen Sie Lage, ungefähre Größe und Branche — wir zeigen passende Optionen.",
-      "bot.r2":"Gerne. Wir bewerten Ihre Fläche und finden diskret Mieter oder Käufer. Wo liegt sie und was möchten Sie tun?",
-      "bot.r3":"Ich verbinde Sie mit dem Team: schreiben Sie an carola@alorac.com oder +34 659 301 154. In Produktion läuft dieser Chat direkt über WhatsApp weiter.",
-      "bot.copied":"Kopiert"
+    it:{
+      "nav.services":"Servizi","nav.track":"Referenze","nav.insights":"Mercato","nav.opp":"Opportunità","nav.contact":"Contatti","nav.cta":"Richiedi una consulenza",
+      "hero.eyebrow":"Consulenza immobiliare · Ibiza",
+      "hero.title":"Il locale giusto cambia tutto.",
+      "hero.sub":"Dal 2011 accompagniamo i marchi leader nel loro insediamento alle Isole Baleari. Intermediazione, valutazione e gestione completa di spazi retail di pregio.",
+      "hero.cta1":"Richiedi una consulenza","hero.cta2":"Scopri le referenze",
+      "hero.m1":"Anno di fondazione","hero.m2":"Anni sul mercato","hero.m3":"Solo retail commerciale",
+      "slot.hero":"Locale di pregio / via commerciale di Ibiza (Vara de Rey, Marina)",
+      "traj.eyebrow":"I numeri della nostra esperienza","traj.tag":"Da completare","traj.1l":"Anni di esperienza","traj.2l":"Operazioni concluse","traj.3l":"Marchi di primo piano","traj.4l":"Zone commerciali di pregio","traj.note":"Dati di volume, senza importi.",
+      "about.eyebrow":"Chi siamo",
+      "about.title":"15 anni a leggere il mercato di Ibiza.",
+      "about.body":"Alorac è una società di consulenza immobiliare fondata nel 2011 da Carola Nicolàs, avvocata e punto di riferimento del retail alle Isole Baleari. Non lavoriamo con annunci pubblici: operiamo grazie alla conoscenza diretta del mercato e con la massima discrezione in ogni operazione.",
+      "serv.eyebrow":"Servizi","serv.title":"Un affiancamento completo, dall'analisi alla firma.",
+      "serv.1t":"Studi di mercato","serv.1b":"Analisi di redditività, canoni medi al m² e domanda reale per zona, per decidere sulla base dei dati.",
+      "serv.2t":"Valutazione immobiliare","serv.2b":"Stima del valore e del canone di mercato per negoziare da una posizione informata.",
+      "serv.3t":"Gestione completa","serv.3b":"Pratiche per le licenze, direzione lavori e una rete di fornitori, imprese edili e artigiani locali.",
+      "track.eyebrow":"Referenze","track.title":"Marchi che si sono affidati ad Alorac",
+      "track.note":"I nomi saranno sostituiti dai loghi ufficiali di ciascun marchio in fase di produzione.",
+      "ins.eyebrow":"Il vantaggio Alorac","ins.title":"Perché i marchi leader scelgono Alorac per arrivare a Ibiza.",
+      "ins.intro":"Non competiamo sugli annunci né sul prezzo. Competiamo sulla conoscenza diretta del mercato e sull'accesso ai locali che contano.",
+      "ins.1l":"Accesso al proprietario","ins.1c":"Un rapporto diretto con i proprietari dei locali di pregio di Ibiza — niente annunci aperti.",
+      "ins.2l":"Criterio di posizione","ins.2c":"Valutiamo la reale compatibilità tra il locale, il settore e il pubblico di ogni marchio.",
+      "ins.3l":"Operazioni riservate","ins.3c":"Locazione, cessione o vendita gestite fuori dal mercato aperto, con riservatezza.",
+      "opp.eyebrow":"Opportunità su richiesta","opp.title":"Non pubblichiamo le operazioni. Le presentiamo a chi è adatto.",
+      "opp.body":"Ogni locale è trattato con discrezione. Ci dica cosa cerca —o cosa desidera affittare, cedere o vendere— e La contatteremo con le opzioni più adatte.",
+      "form.done":"Grazie. Abbiamo ricevuto la Sua richiesta e La contatteremo a breve.",
+      "form.name":"Nome","form.contact":"Email o telefono","form.type":"Tipo di operazione",
+      "form.o1":"Cerco un locale","form.o2":"Voglio affittare il mio locale","form.o3":"Voglio cedere / vendere","form.o4":"Valutazione / consulenza",
+      "form.msg":"Messaggio","form.submit":"Invia richiesta",
+      "contact.eyebrow":"Contatti","contact.title":"Parliamo della Sua prossima location.","contact.email":"Email","contact.phone":"Telefono","contact.copy":"Copia",
+      "footer.tag":"Consulenza per il retail commerciale dal 2011",
+      "bot.open":"Chiedi","bot.sub":"Rispondiamo subito · 24/7","bot.note":"Demo · in produzione l'assistente sarà collegato a WhatsApp",
+      "bot.hello":"Salve 👋 Sono l'assistente di Alorac. Come posso aiutarLa?",
+      "bot.c1":"Cerco un locale a Ibiza","bot.c2":"Voglio affittare/cedere il mio","bot.c3":"Parlare con Carola",
+      "bot.r1":"Perfetto. Alorac lavora su richiesta, non con annunci pubblici. Mi indichi zona, metratura indicativa e settore, e Le presenteremo le opzioni adatte.",
+      "bot.r2":"Volentieri. Possiamo valutare il Suo locale e trovare un inquilino o un acquirente con discrezione. Dove si trova e che tipo di operazione cerca?",
+      "bot.r3":"La metto in contatto con il team: scriva a carola@alorac.com o chiami il +34 659 301 154. In produzione questa conversazione prosegue direttamente su WhatsApp.",
+      "bot.copied":"Copiato"
     }
   };
 
