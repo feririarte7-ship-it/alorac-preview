@@ -119,10 +119,10 @@
   @media (max-width:520px){.navcta{display:none}}
 
   /* HERO */
-  .hero{padding-block:76px 64px;border-bottom:1px solid var(--line-2)}
-  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center}
-  .hero h1{font-size:clamp(40px,6vw,68px);line-height:1.02}
-  .hero .lede{margin-top:24px;font-size:19px}
+  .hero{padding-block:96px 72px;border-bottom:1px solid var(--line-2)}
+  .hero-grid{display:block;max-width:880px}
+  .hero h1{font-size:clamp(44px,7.4vw,88px);line-height:.98;letter-spacing:-.015em}
+  .hero .lede{margin-top:28px;font-size:19px;max-width:58ch}
   .hero-cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
   .btn{font-size:14px;font-weight:600;text-decoration:none;padding:13px 24px;border-radius:999px;letter-spacing:.01em;cursor:pointer;border:1px solid transparent;display:inline-block}
   .btn-primary{background:var(--ink);color:var(--paper)}
@@ -140,14 +140,11 @@
   }
   .slot .st{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--brass)}
   .slot .sd{font-family:var(--serif);font-size:18px;margin-top:8px;color:var(--ink-soft)}
-  .hero-img{aspect-ratio:4/5;max-width:100%}
-  img.hero-img{display:block;width:100%;height:auto;object-fit:cover;border-radius:4px}
-  @media (max-width:820px){.hero-grid{grid-template-columns:1fr;gap:36px}.hero-img{aspect-ratio:16/10;order:-1}}
 
-  .trajectory{margin-top:54px;padding-top:36px;border-top:1px solid var(--line)}
+  .trajectory{margin-top:64px}
   .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-top:20px}
-  .stat{background:var(--paper);padding:24px 22px;position:relative}
-  .stat .sn{font-family:var(--serif);font-size:clamp(34px,4.6vw,46px);line-height:1;font-variant-numeric:tabular-nums}
+  .stat{background:var(--paper);padding:28px 26px;position:relative}
+  .stat .sn{font-family:var(--serif);font-size:clamp(40px,5.6vw,60px);line-height:1;font-variant-numeric:tabular-nums}
   .stat .sl{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-faint);margin-top:10px;font-weight:600}
   .traj-note{margin-top:12px;font-size:12px;color:var(--ink-faint)}
   @media (max-width:600px){.stat-row{grid-template-columns:1fr}}
@@ -167,12 +164,28 @@
 
   /* TRACK RECORD */
   .track-note{margin-top:20px;font-size:12.5px;color:var(--ink-faint)}
-  .brandwall{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:10px}
-  .brandwall li{background:#FBF8F1;border-radius:6px;height:58px;padding:10px 14px;display:flex;align-items:center;justify-content:center}
+  /* Carruseles: la pista contiene la secuencia dos veces; se desplaza -50% para un loop sin corte */
+  .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+  .marquee-track{list-style:none;margin:0;padding:0 12px 0 0;display:flex;gap:12px;width:max-content;animation:marquee var(--dur,200s) linear infinite}
+  .marquee:hover .marquee-track,.marquee:focus-within .marquee-track{animation-play-state:paused}
+  .marquee.photos .marquee-track{animation-direction:reverse}
+  @keyframes marquee{to{transform:translateX(-50%)}}
+  .brandwall li{flex:0 0 auto;width:140px;background:#FBF8F1;border-radius:6px;height:60px;padding:10px 14px;display:flex;align-items:center;justify-content:center}
   /* logo de color muy claro (Melé Beach): sobre el chip claro no contrasta; celda oscura en vez de recolorear el logo */
   .brandwall li.soft{background:#3B342A;box-shadow:inset 0 0 0 1px rgba(22,19,15,.12)}
   .brandwall img{display:block;width:100%;height:100%;max-height:30px;object-fit:contain}
-  @media (max-width:600px){.brandwall{grid-template-columns:repeat(3,1fr);gap:8px}.brandwall li{height:50px;padding:8px 10px}}
+  .marquee.photos{margin-top:14px}
+  .photostrip li{flex:0 0 auto}
+  .photostrip img{display:block;height:220px;width:auto;max-width:none;border-radius:4px}
+  @media (max-width:600px){.brandwall li{width:112px;height:52px;padding:8px 10px}.photostrip img{height:160px}}
+  /* Sin movimiento: el muro vuelve a ser una grilla estática y la tira de fotos se desplaza a mano */
+  @media (prefers-reduced-motion:reduce){
+    .marquee{-webkit-mask-image:none;mask-image:none}
+    .marquee-track{animation:none;width:auto}
+    .marquee-track [aria-hidden="true"]{display:none}
+    .brandwall{flex-wrap:wrap;justify-content:center;padding:0 16px}
+    .marquee.photos{overflow-x:auto}
+  }
 
   /* INSIGHTS */
   .ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -278,7 +291,6 @@
           <a class="btn btn-ghost" href="#trayectoria" data-i18n="hero.cta2">Ver trayectoria</a>
         </div>
       </div>
-      <img class="hero-img" src="assets/hero-ibiza-leonce-2015.jpg" alt="Local comercial en una esquina del casco antiguo de Ibiza" width="1800" height="1201" fetchpriority="high">
     </div>
     <div class="trajectory">
       <p class="eyebrow" style="margin-bottom:0" data-i18n="traj.eyebrow">Trayectoria en volumen</p>
@@ -334,8 +346,8 @@
         <h2 data-i18n="track.title">Marcas que han confiado en Alorac para su implantación en Ibiza.</h2>
       </div>
     </div>
-    <div class="wrap">
-      <ul class="brandwall" aria-label="Marcas">
+    <div class="marquee" aria-label="Marcas">
+      <ul class="marquee-track brandwall" style="--dur:260s">
       <li><img src="assets/muro/accessorize.png" alt="Accessorize" loading="lazy"></li>
       <li><img src="assets/muro/adolfo-dominguez.png" alt="Adolfo Domínguez" loading="lazy"></li>
       <li><img src="assets/muro/american-vintage.png" alt="American Vintage" loading="lazy"></li>
@@ -408,6 +420,110 @@
       <li><img src="assets/muro/yves-rocher.png" alt="Yves Rocher" loading="lazy"></li>
       <li><img src="assets/muro/zadig-voltaire.svg" alt="Zadig &amp; Voltaire" loading="lazy"></li>
       <li><img src="assets/muro/zimmermann.svg" alt="Zimmermann" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/accessorize.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/adolfo-dominguez.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/american-vintage.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/amichi.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/antica-sartoria.svg" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/bang-olufsen.svg" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/benetton.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/bershka.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/bijou-brigitte.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/bottega-veneta.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/calma-house.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/calzedonia.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/carpisa.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/cbbbc-ibiza.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/charo-ruiz.svg" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/claire-luise.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/claires.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/decimas.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/desigual.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/dipinca.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/dolce-gabbana.svg" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/double-agent.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/druni.svg" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/etam.svg" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/fc-barcelona.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/fringomania.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/gerry.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/gucci.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/guess-jeans.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/harley-davidson.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/havaianas.svg" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/intimissimi.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/intimissimi-uomo.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/jack-n-jones.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/kiko.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/koala-bay.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/l-occitane.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/leonce.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/levis.svg" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/llongueras.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/louis-vuitton.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/mac.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/macson.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/maje.svg" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/massimo-dutti.svg" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/mc2-saint-barth.png" alt="" loading="lazy"></li>
+      <li class="soft" aria-hidden="true"><img src="assets/muro/mele-beach.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/misako.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/napapijri.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/nespresso.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/nort-beachwear.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/nude-project.svg" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/oui-c-moi.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/oysho.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/philipp-plein.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/primor.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/pull-n-bear.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/sandro.svg" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/sephora.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/shana.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/stella-mccartney.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/sundek.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/superdry.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/tezenis.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/the-body-shop.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/viandas.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/vilebrenquin.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/virginia-vald.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/yamaday.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/yves-rocher.png" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/zadig-voltaire.svg" alt="" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/muro/zimmermann.svg" alt="" loading="lazy"></li>
+      </ul>
+    </div>
+    <div class="marquee photos" aria-label="Locales">
+      <ul class="marquee-track photostrip" style="--dur:120s">
+      <li><img src="assets/locales/philipp-plein.jpg" alt="Philipp Plein, Marina Ibiza" width="587" height="440" loading="lazy"></li>
+      <li><img src="assets/locales/louis-vuitton.jpg" alt="Louis Vuitton, Ibiza" width="741" height="440" loading="lazy"></li>
+      <li><img src="assets/locales/cbbc.jpg" alt="CBbC, Ibiza" width="659" height="440" loading="lazy"></li>
+      <li><img src="assets/locales/llongueras.jpg" alt="Llongueras, Ibiza" width="659" height="440" loading="lazy"></li>
+      <li><img src="assets/locales/intimissimi.jpg" alt="Intimissimi, Ibiza" width="659" height="440" loading="lazy"></li>
+      <li><img src="assets/locales/shana.jpg" alt="Shana, Ibiza" width="661" height="440" loading="lazy"></li>
+      <li><img src="assets/locales/macson.jpg" alt="Macson, Ibiza" width="659" height="440" loading="lazy"></li>
+      <li><img src="assets/locales/guess.jpg" alt="GUESS, Ibiza" width="659" height="440" loading="lazy"></li>
+      <li><img src="assets/locales/mac.jpg" alt="MAC, Ibiza" width="782" height="440" loading="lazy"></li>
+      <li><img src="assets/locales/tezenis.jpg" alt="Tezenis, Ibiza" width="974" height="440" loading="lazy"></li>
+      <li><img src="assets/locales/yamamay.jpg" alt="Yamamay, Ibiza" width="661" height="440" loading="lazy"></li>
+      <li><img src="assets/locales/kiko.jpg" alt="KIKO Milano, Ibiza" width="782" height="440" loading="lazy"></li>
+      <li><img src="assets/locales/loccitane.jpg" alt="L'Occitane, Ibiza" width="782" height="440" loading="lazy"></li>
+      <li><img src="assets/locales/calma-house.jpg" alt="Calma House, Ibiza" width="587" height="440" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/locales/philipp-plein.jpg" alt="" width="587" height="440" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/locales/louis-vuitton.jpg" alt="" width="741" height="440" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/locales/cbbc.jpg" alt="" width="659" height="440" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/locales/llongueras.jpg" alt="" width="659" height="440" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/locales/intimissimi.jpg" alt="" width="659" height="440" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/locales/shana.jpg" alt="" width="661" height="440" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/locales/macson.jpg" alt="" width="659" height="440" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/locales/guess.jpg" alt="" width="659" height="440" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/locales/mac.jpg" alt="" width="782" height="440" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/locales/tezenis.jpg" alt="" width="974" height="440" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/locales/yamamay.jpg" alt="" width="661" height="440" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/locales/kiko.jpg" alt="" width="782" height="440" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/locales/loccitane.jpg" alt="" width="782" height="440" loading="lazy"></li>
+      <li aria-hidden="true"><img src="assets/locales/calma-house.jpg" alt="" width="587" height="440" loading="lazy"></li>
       </ul>
     </div>
   </section>
